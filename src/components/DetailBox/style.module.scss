@@ -1,0 +1,22 @@
+.detailBox {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 14px;
+  margin-bottom: 8px;
+  background-color: rgb(220, 220, 220);
+  padding: 5px 10px;
+  border-radius: 6px;
+  gap: 20px;
+  span {
+    font-weight: 600;
+  }
+  .information {
+    background-color: grey;
+  }
+}
+
+.title {
+  font-weight: 600;
+  font-size: 14px;
+}
