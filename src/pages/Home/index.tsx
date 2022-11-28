@@ -1,31 +1,28 @@
 import { Form, Formik } from "formik";
-import { Table } from "react-bootstrap";
 import Layout from "../../components/Layout";
 import SearchBar from "../../components/SearchBar";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from "../../config/hooks";
 import { fetchData, selectHome } from "./homeSlice";
-import ResultCard from "../../components/ResultCard";
-import { Customer } from "../../config/models/customer";
+import CustomerList from "../../components/CustomerList";
+
 
 type InitialValues = {
   searchText: string;
 }
 
-
-
-
-
 function Home() {
-  const home = useAppSelector(selectHome);
+
+  const initialValues: InitialValues = { searchText: "" };
+  const homeData = useAppSelector(selectHome);
+  const customers = homeData.customers
   const dispatch = useAppDispatch();
+
+
+
   useEffect(() => {
     dispatch(fetchData())
   }, [])
-
-
-  const initialValues: InitialValues = { searchText: "" };
-
   return (
     <>
       <Layout>
@@ -45,7 +42,7 @@ function Home() {
               <SearchBar
                 type="text"
                 name="searchText"
-                label="Müşteriler"
+                label="Müşterilerim"
                 placeholder="Müşteri Ara"
                 controlId="searchText"
                 onSearch={handleSubmit}
@@ -61,23 +58,7 @@ function Home() {
             </Form>
           )}
         </Formik>
-        <Table striped bordered hover>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Username</th>
-            </tr>
-          </thead>
-          <tbody>
-            {home.customers.map((item: Customer) => {
-              return <ResultCard key={item.id} companyName={item.companyName} taxNumber={item.taxNumber} taxOffice={item.taxOffice} contactNumber={item.contactNumber} invoiceCount={item.invoiceCount} id={item.id} />
-            })}
-
-
-          </tbody>
-        </Table>
+        <CustomerList data={customers} />
       </Layout>
     </>
 

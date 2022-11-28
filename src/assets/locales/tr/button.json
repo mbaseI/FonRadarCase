@@ -1,7 +1,8 @@
 {
-  "click": "Tıkla",
+  "language": "Dil",
   "turkish": "Türkçe",
   "english": "İngilizce",
   "chinese": "Çinçe",
-  "hebrew": "İbranice"
+  "hebrew": "İbranice",
+  "login": "Giriş Yap"
 }

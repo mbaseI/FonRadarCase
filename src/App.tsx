@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify"
 import "./App.css"
 import Login from "./pages/Login"
 import Home from "./pages/Home"
+import Detail from "./pages/Detail"
 
 
 
@@ -17,6 +18,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<Home />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/detail" element={<Detail />} />
           </Routes>
         </BrowserRouter>
         <ToastContainer limit={3} />

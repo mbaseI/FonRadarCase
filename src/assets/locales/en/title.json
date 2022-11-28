@@ -1,4 +1,8 @@
 {
   "title": "title english",
-  "login": "User Login"
+  "login": "User Login",
+  "companyName": "Company Name",
+  "taxNumber": "Tax Number",
+  "taxOffice": "Tax Office",
+  "invoiceCount": "Invoice Count"
 }

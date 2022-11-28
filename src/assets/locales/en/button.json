@@ -1,7 +1,8 @@
 {
-  "click": "Click",
+  "language": "Language",
   "turkish": "Turkish",
   "english": "English",
   "chinese": "Chinese",
-  "hebrew": "Hebrew"
+  "hebrew": "Hebrew",
+  "login": "Login"
 }

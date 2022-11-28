@@ -2,14 +2,14 @@ import { Customer } from "../../config/models/customer";
 
 
 
-function ResultCard({ companyName, taxNumber, taxOffice, contactNumber }: Customer) {
+function ResultCard({ companyName, taxNumber, taxOffice, invoiceCount }: Customer) {
     return (
         <>
-            <tr>
+            <tr >
                 <td>{companyName}</td>
                 <td>{taxNumber}</td>
                 <td>{taxOffice}</td>
-                <td>{contactNumber}</td>
+                <td>{invoiceCount}</td>
             </tr>
         </>
 

@@ -1,4 +1,8 @@
 {
   "title": "title turkish",
-  "login": "Kullanıcı Girişi"
+  "login": "Kullanıcı Girişi",
+  "companyName": "Firma Adı",
+  "taxNumber": "Vergi Numarası",
+  "taxOffice": "Vergi Dairesi",
+  "invoiceCount": "Fatura Sayısı"
 }

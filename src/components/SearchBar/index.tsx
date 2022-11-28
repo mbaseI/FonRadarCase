@@ -19,7 +19,7 @@ type SearchBarProps = {
 function SearchBar({ name, value, placeholder, label, type, controlId, touched, errors, handleChange, onSearch, handleBlur }: SearchBarProps) {
     return (
         <Form.Group controlId={controlId}>
-            <Form.Label className="d-flex justify-content-start">{label}</Form.Label>
+            <Form.Label className="d-flex justify-content-start h4">{label}</Form.Label>
             <InputGroup>
                 <Form.Control
                     type={type}

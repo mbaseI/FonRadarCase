@@ -1,6 +1,7 @@
 import { Form, Formik } from "formik"
 import { Col, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next"
+import Button from "../../components/Button";
 import FRInput from "../../components/FRInput";
 import FRPasswordInput from "../../components/FRPasswordInput";
 import Layout from "../../components/Layout";
@@ -37,7 +38,7 @@ function Login() {
                   <FRInput
                     type="email"
                     name="email"
-                    label="E-posta Adresi"
+                    label={t("label.email")}
                     placeholder="Email"
                     controlId="formEmail"
                     handleChange={handleChange}
@@ -48,7 +49,7 @@ function Login() {
                   />
                   <FRPasswordInput
                     name="password"
-                    label="Şifre"
+                    label={t("label.password")}
                     placeholder="Password"
                     controlId="password"
                     handleChange={handleChange}
@@ -57,7 +58,7 @@ function Login() {
                     touched={touched}
                     errors={errors}
                   />
-                  <button type="submit">{t("button.click")}</button>
+                  <Button onSubmit={handleSubmit} />
                 </Form>
               )}
             </Formik>
