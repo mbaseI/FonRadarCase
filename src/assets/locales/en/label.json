@@ -1,4 +1,15 @@
 {
   "email": "Email",
-  "password": "Password"
+  "password": "Password",
+  "tradeName": "Trade Name",
+  "scope": "Scope",
+  "guarantee": "Guarentee",
+  "capital": "Capital",
+  "profitInormation": "Profit Information",
+  "conditions": "Working Conditions",
+  "expiry": "Expiry",
+  "paymentMethod": "PaymentMethod",
+  "limit": "Limit",
+  "cash": "Cash",
+  "month": "Month"
 }

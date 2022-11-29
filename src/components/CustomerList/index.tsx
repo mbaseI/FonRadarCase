@@ -1,4 +1,3 @@
-import { t } from "i18next";
 import { MouseEvent, useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import { useTranslation } from "react-i18next";

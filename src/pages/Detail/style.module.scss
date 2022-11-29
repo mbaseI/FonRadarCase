@@ -1,5 +1,9 @@
-.x {
+.detail {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  .detailBoxWrapper {
+    display: flex;
+    flex-direction: column;
+  }
 }

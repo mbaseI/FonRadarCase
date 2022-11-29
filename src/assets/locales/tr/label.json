@@ -1,4 +1,15 @@
 {
   "email": "E-posta Adresi",
-  "password": "Şifreniz"
+  "password": "Şifreniz",
+  "tradeName": "Ticari Ünvan",
+  "scope": "Faaliyet Alanı",
+  "guarantee": "Teminat",
+  "capital": "Sermaye",
+  "profitInormation": "Kar Bilgileri",
+  "conditions": "Çalışma Koşulları",
+  "expiry": "Vade",
+  "paymentMethod": "Ödeme Şekli",
+  "limit": "Limit",
+  "cash": "Nakit",
+  "month": "Ay"
 }

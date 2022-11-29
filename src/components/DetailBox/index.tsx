@@ -1,20 +1,22 @@
-import { useTranslation } from "react-i18next";
 import FRInfoText from "../FRInfoText";
 import styles from './style.module.scss'
 
 type DetailBoxProps = {
     title: string;
+    data: any;
 }
 
-function DetailBox({ title }: DetailBoxProps) {
-    const { t } = useTranslation()
+function DetailBox({ title, data }: DetailBoxProps) {
+
     return (
         <>
             <div className={styles.title}>{title}</div>
             <div className={styles.detailBox}>
-                <FRInfoText title={'2019'} text={'123.123.00 ₺'} />
-                <FRInfoText title={'2019'} text={'123.123.00 ₺'} />
-                <FRInfoText title={'2019'} text={'123.123.00 ₺'} />
+                {data.map((item: any) => {
+                    return <FRInfoText title={item.title} text={item.text} />
+                })}
+
+
             </div>
         </>
 

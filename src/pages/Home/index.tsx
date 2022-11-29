@@ -1,7 +1,7 @@
 import { Form, Formik } from "formik";
 import Layout from "../../components/Layout";
 import SearchBar from "../../components/SearchBar";
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from "../../config/hooks";
 import { fetchData, selectHome } from "./homeSlice";
 import CustomerList from "../../components/CustomerList";
@@ -22,7 +22,7 @@ function Home() {
 
   useEffect(() => {
     dispatch(fetchData())
-  }, [])
+  })
   return (
     <>
       <Layout>

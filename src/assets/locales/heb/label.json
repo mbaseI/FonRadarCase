@@ -1,4 +1,15 @@
 {
   "email": "אימייל",
-  "password": "סיסמה"
+  "password": "סיסמה",
+  "tradeName": "שם מסחרי",
+  "scope": "תְחוּם",
+  "guarantee": "להבטיח",
+  "capital": "עיר בירה",
+  "profitInormation": "מידע על רווחים",
+  "conditions": "תנאי עבודה",
+  "expiry": "תְפוּגָה",
+  "paymentMethod": "אמצעי תשלום",
+  "limit": "לְהַגבִּיל",
+  "cash": "כסף מזומן",
+  "month": "חוֹדֶשׁ"
 }

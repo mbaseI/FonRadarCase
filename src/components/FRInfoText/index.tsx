@@ -1,4 +1,3 @@
-import { useTranslation } from "react-i18next";
 import styles from './style.module.scss'
 
 type DetailBoxProps = {
@@ -7,7 +6,6 @@ type DetailBoxProps = {
 }
 
 function FRInfoText({ title, text }: DetailBoxProps) {
-    const { t } = useTranslation()
     return (
         <>
             <div className={styles.FRInfoText}>

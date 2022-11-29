@@ -1,4 +1,15 @@
 {
   "email": "电子邮件",
-  "password": "电子邮件"
+  "password": "电子邮件",
+  "tradeName": "商号",
+  "scope": "范围",
+  "guarantee": "保证",
+  "capital": "首都",
+  "profitInormation": "利润信息",
+  "conditions": "工作环境",
+  "expiry": "到期",
+  "paymentMethod": "付款方式",
+  "limit": "现金",
+  "cash": "现金",
+  "month": "月份"
 }
