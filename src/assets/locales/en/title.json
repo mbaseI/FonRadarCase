@@ -4,5 +4,6 @@
   "companyName": "Company Name",
   "taxNumber": "Tax Number",
   "taxOffice": "Tax Office",
-  "invoiceCount": "Invoice Count"
+  "invoiceCount": "Invoice Count",
+  "contactNumber": "Contact Number"
 }

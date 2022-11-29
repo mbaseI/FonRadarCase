@@ -37,7 +37,7 @@ function CustomerList({ data }: CustomerListProps) {
                         <th className={styles.columnName} onClick={(e) => onSortClick(e, "companyName")}>{(t("title.companyName"))}</th>
                         <th className={styles.columnName} onClick={(e) => onSortClick(e, "taxNumber")}>{(t("title.taxNumber"))}</th>
                         <th className={styles.columnName} onClick={(e) => onSortClick(e, "taxOffice")}>{(t("title.taxOffice"))}</th>
-                        <th className={styles.columnName} onClick={(e) => onSortClick(e, "invoiceCount")}>{(t("title.invoiceCount"))}</th>
+                        <th className={styles.columnName} onClick={(e) => onSortClick(e, "contactNumber")}>{(t("title.contactNumber"))}</th>
                     </tr>
                 </thead>
                 <tbody>

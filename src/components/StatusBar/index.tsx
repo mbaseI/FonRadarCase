@@ -16,7 +16,7 @@ function StatusBar({ name, status, requirement }: StatusBarProps) {
             <div className={styles.statusBar}>
                 <div className={styles.textSide}>
                     <HouseDoor color='blue' />
-                    <span>{name} {requirement && t("document.required")}</span>
+                    <span>{name} {requirement && `(${t("document.required")})`}</span>
                 </div>
                 <div>
                     {status ? <CheckCircle color='green' /> : <XCircle color='red' />}

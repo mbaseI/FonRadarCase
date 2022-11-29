@@ -4,5 +4,6 @@
   "companyName": "公司名称",
   "taxNumber": "税号",
   "taxOffice": "税务局",
-  "invoiceCount": "发票数量"
+  "invoiceCount": "发票数量",
+  "contactNumber": "联系电话"
 }

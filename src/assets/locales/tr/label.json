@@ -11,5 +11,7 @@
   "paymentMethod": "Ödeme Şekli",
   "limit": "Limit",
   "cash": "Nakit",
-  "month": "Ay"
+  "month": "Ay",
+  "myCustomers": "Müşterilerim",
+  "addNewCustomer": "Yeni Müşteri Ekleyin"
 }

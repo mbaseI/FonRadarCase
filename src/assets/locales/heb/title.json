@@ -4,5 +4,6 @@
   "companyName": "שם החברה",
   "taxNumber": "מספר מס",
   "taxOffice": "משרד המס",
-  "invoiceCount": "ספירת חשבוניות"
+  "invoiceCount": "ספירת חשבוניות",
+  "contactNumber": "מספר איש קשר"
 }

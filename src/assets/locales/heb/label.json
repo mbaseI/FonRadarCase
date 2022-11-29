@@ -11,5 +11,7 @@
   "paymentMethod": "אמצעי תשלום",
   "limit": "לְהַגבִּיל",
   "cash": "כסף מזומן",
-  "month": "חוֹדֶשׁ"
+  "month": "חוֹדֶשׁ",
+  "myCustomers": "הלקוחות שלי",
+  "addNewCustomer": "להוסיף לקוח חדש"
 }

@@ -8,6 +8,23 @@ export const fetchData = createAsyncThunk("home/fetchData", async () => {
   return await response.json();
 });
 
+export const addCustomer = createAsyncThunk(
+  "home/addCustomer",
+  async (values: any) => {
+    const response = await fetch(
+      "https://6215eeb77428a1d2a354c664.mockapi.io/api/v1/customers",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      }
+    );
+    return await response.json();
+  }
+);
+
 interface HomeReducerModel {
   customers: Customer[];
 }

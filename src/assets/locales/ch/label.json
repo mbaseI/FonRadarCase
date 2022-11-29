@@ -11,5 +11,7 @@
   "paymentMethod": "付款方式",
   "limit": "现金",
   "cash": "现金",
-  "month": "月份"
+  "month": "月份",
+  "myCustomers": "我的客户",
+  "addNewCustomer": "添加新客户"
 }

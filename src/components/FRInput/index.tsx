@@ -16,7 +16,7 @@ type FRInputProps = {
 
 function FRInput({ name, value, placeholder, label, type, controlId, touched, errors, handleChange, handleBlur }: FRInputProps) {
     return (
-        <Form.Group controlId={controlId}>
+        <Form.Group className='mb-2' controlId={controlId}>
             <Form.Label className="d-flex justify-content-start">{label}</Form.Label>
             <Form.Control
                 type={type}

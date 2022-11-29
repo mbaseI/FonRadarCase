@@ -11,5 +11,7 @@
   "paymentMethod": "PaymentMethod",
   "limit": "Limit",
   "cash": "Cash",
-  "month": "Month"
+  "month": "Month",
+  "myCustomers": "My Customers",
+  "addNewCustomer": "Add New Customer"
 }

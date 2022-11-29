@@ -4,5 +4,6 @@
   "companyName": "Firma Adı",
   "taxNumber": "Vergi Numarası",
   "taxOffice": "Vergi Dairesi",
-  "invoiceCount": "Fatura Sayısı"
+  "invoiceCount": "Fatura Sayısı",
+  "contactNumber": "İletişim Numarası"
 }

@@ -4,7 +4,6 @@ import { Search } from 'react-bootstrap-icons'
 type SearchBarProps = {
     handleChange: any;
     handleBlur: any;
-    onSearch: any;
     touched: any;
     errors: any;
     value: any;
@@ -16,11 +15,11 @@ type SearchBarProps = {
 }
 
 
-function SearchBar({ name, value, placeholder, label, type, controlId, touched, errors, handleChange, onSearch, handleBlur }: SearchBarProps) {
-    // console.log(value, "bar") Sıkıntı mevcut
+function SearchBar({ name, value, placeholder, label, type, controlId, touched, errors, handleChange, handleBlur }: SearchBarProps) {
     return (
         <Form.Group controlId={controlId}>
-            <Form.Label className="d-flex justify-content-start h4">{label}</Form.Label>
+            <Form.Label className="d-flex justify-content-start h4">{label}
+            </Form.Label>
             <InputGroup>
                 <Form.Control
                     type={type}

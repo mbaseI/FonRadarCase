@@ -1,20 +1,37 @@
-import { useEffect } from "react";
-import { Col, Row } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Button, Col, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next"
 import { useLocation } from "react-router-dom";
 import DetailBox from "../../components/DetailBox";
 import FRInfoText from "../../components/FRInfoText";
 import Layout from "../../components/Layout";
 import StatusBar from "../../components/StatusBar";
-import { useAppDispatch } from "../../config/hooks";
-import { getCustomer } from "./detailSlice";
+import { useAppDispatch, useAppSelector } from "../../config/hooks";
+import { deleteCustomer, editCustomer, getCustomer, selectDetail } from "./detailSlice";
+import { Trash3, PencilSquare } from 'react-bootstrap-icons';
 import styles from './style.module.scss';
+import { useNavigate } from "react-router-dom";
+import FREditModal from "../../components/FREditModal";
 
 
 function Detail() {
+
+
+
   const location = useLocation();
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
+  const data = useAppSelector(selectDetail);
+  const customerData = data.customerDetail
+  const navigate = useNavigate();
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const onDelete = (id: any) => {
+    dispatch(deleteCustomer(id)).then(() => navigate('/'))
+  }
 
   const informations = [{
     id: "1",
@@ -92,34 +109,41 @@ function Detail() {
   }]
 
   useEffect(() => {
-    console.log(location.state)
-  }, [location])
-
-  useEffect(() => {
     dispatch(getCustomer(location.state))
-  })
+  }, [])
 
   return (
     <>
       <Layout>
-        <Row>
+        <Row className="mt-5">
           <Col md={6}>
             <div className={styles.detail}>
-              <FRInfoText title={t("label.tradeName")} text={"DENİZ FAKTORİNG ANONİM ŞİRKETİ"} />
-              <FRInfoText title={t("label.scope")} text={"Demirçelik"} />
-              <FRInfoText title={t("label.guarantee")} text={"2910141668"} />
-              <FRInfoText title={t("label.capital")} text={"123.132.00 ₺"} />
+              <FRInfoText title={t("title.companyName")} text={customerData.companyName} />
+              <FRInfoText title={t("title.taxNumber")} text={customerData.taxNumber} />
+              <FRInfoText title={t("title.taxOffice")} text={customerData.taxOffice} />
+              <FRInfoText title={t("title.invoiceCount")} text={customerData.invoiceCount} />
+              <FRInfoText title={t("title.contactNumber")} text={customerData.contactNumber} />
               <div className={styles.detailBoxWrapper}>
                 <DetailBox title={'Kar Bilgileri'} data={detailBoxData1} />
                 <DetailBox title={'Çalışma Koşullar'} data={detailBoxData2} />
               </div>
             </div>
           </Col>
-          <Col md={6}> {
-            informations.map((item) => {
+          <Col md={6}>
+            <div className={styles.buttons}>
+              <Button onClick={() => onDelete(location.state)}>
+                <Trash3 />
+              </Button>
+              <Button onClick={handleShow}>
+                <PencilSquare />
+              </Button>
+            </div>
+            {informations.map((item) => {
               return <StatusBar key={item.id} name={item.name} status={item.status} requirement={item.requirement} />
             })
-          }</Col>
+            }
+            <FREditModal handleClose={handleClose} show={show} handleShow={handleShow} editCustomer={editCustomer} userId={location.state} customerData={customerData} />
+          </Col>
         </Row>
       </Layout>
     </>

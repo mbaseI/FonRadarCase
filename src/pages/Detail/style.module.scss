@@ -7,3 +7,17 @@
     flex-direction: column;
   }
 }
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  button {
+    background-color: #bdbbbb;
+    border: none;
+    color: green;
+  }
+  :first-child {
+    margin: 0 10px;
+  }
+}
