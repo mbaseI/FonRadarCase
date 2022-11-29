@@ -13,7 +13,7 @@ function DetailBox({ title, data }: DetailBoxProps) {
             <div className={styles.title}>{title}</div>
             <div className={styles.detailBox}>
                 {data.map((item: any) => {
-                    return <FRInfoText title={item.title} text={item.text} />
+                    return <FRInfoText key={item.id} title={item.title} text={item.text} />
                 })}
 
 

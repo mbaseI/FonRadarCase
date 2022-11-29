@@ -6,10 +6,12 @@ import LanguageSelector from '../LanguageSelector';
 
 
 function Header() {
+
+
     return (
         <Navbar bg="light" expand="lg" >
             <Container>
-                <Navbar.Brand>
+                <Navbar.Brand href='/'>
                     <Image src='https://www.fonradar.com/wp-content/uploads/2021/10/logo-1.png' />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

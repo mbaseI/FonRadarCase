@@ -1,4 +1,4 @@
-export type Customer = {
+export type customerDetail = {
   companyName: string;
   taxNumber: string;
   taxOffice: string;

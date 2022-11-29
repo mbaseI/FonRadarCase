@@ -17,6 +17,7 @@ type SearchBarProps = {
 
 
 function SearchBar({ name, value, placeholder, label, type, controlId, touched, errors, handleChange, onSearch, handleBlur }: SearchBarProps) {
+    // console.log(value, "bar") Sıkıntı mevcut
     return (
         <Form.Group controlId={controlId}>
             <Form.Label className="d-flex justify-content-start h4">{label}</Form.Label>
@@ -31,7 +32,7 @@ function SearchBar({ name, value, placeholder, label, type, controlId, touched, 
                     aria-describedby={name}
                     className='border  border-rounded'
                 />
-                <InputGroup.Text onClick={onSearch} role="button" className='bg-white cursor-pointer' id={name}>
+                <InputGroup.Text className='bg-white cursor-pointer' id={name}>
                     <Search />
                 </InputGroup.Text>
                 {touched.name && errors.name ? (

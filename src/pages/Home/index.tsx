@@ -1,7 +1,7 @@
 import { Form, Formik } from "formik";
 import Layout from "../../components/Layout";
 import SearchBar from "../../components/SearchBar";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from "../../config/hooks";
 import { fetchData, selectHome } from "./homeSlice";
 import CustomerList from "../../components/CustomerList";
@@ -17,12 +17,24 @@ function Home() {
   const homeData = useAppSelector(selectHome);
   const customers = homeData.customers
   const dispatch = useAppDispatch();
+  const [nData, setNData] = useState(customers);
 
+  const onSearch = (value: any) => {
+    const filteredData = nData.filter((item: any) => {
+      return item.companyName.toLowerCase().includes(value.toLowerCase())
+    })
+    setNData(filteredData)
 
+  }
 
   useEffect(() => {
     dispatch(fetchData())
-  })
+  }, [])
+
+  useEffect(() => {
+    setNData(customers)
+  }, [customers])
+
   return (
     <>
       <Layout>
@@ -45,9 +57,10 @@ function Home() {
                 label="Müşterilerim"
                 placeholder="Müşteri Ara"
                 controlId="searchText"
-                onSearch={handleSubmit}
+                onSearch={onSearch}
                 handleChange={(e: any) => {
                   setFieldValue("searchText", e.target.value)
+                  onSearch(e.target.value)
                 }}
                 handleBlur={handleBlur}
                 value={values.searchText}
@@ -58,7 +71,7 @@ function Home() {
             </Form>
           )}
         </Formik>
-        <CustomerList data={customers} />
+        <CustomerList data={nData} />
       </Layout>
     </>
 
