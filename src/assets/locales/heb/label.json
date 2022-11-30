@@ -1,5 +1,6 @@
 {
   "email": "אימייל",
+  "userName": "שם משתמש",
   "password": "סיסמה",
   "tradeName": "שם מסחרי",
   "scope": "תְחוּם",
@@ -13,5 +14,6 @@
   "cash": "כסף מזומן",
   "month": "חוֹדֶשׁ",
   "myCustomers": "הלקוחות שלי",
-  "addNewCustomer": "להוסיף לקוח חדש"
+  "addNewCustomer": "להוסיף לקוח חדש",
+  "edit": "לַעֲרוֹך"
 }

@@ -4,5 +4,8 @@
   "english": "İngilizce",
   "chinese": "Çinçe",
   "hebrew": "İbranice",
-  "login": "Giriş Yap"
+  "login": "Giriş Yap",
+  "close": "Kapat",
+  "saveChanges": "Değişiklikleri Kaydet",
+  "logOut": "Çıkış Yap"
 }

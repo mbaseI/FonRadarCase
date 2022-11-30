@@ -12,7 +12,7 @@ import { Trash3, PencilSquare } from 'react-bootstrap-icons';
 import styles from './style.module.scss';
 import { useNavigate } from "react-router-dom";
 import FREditModal from "../../components/FREditModal";
-
+import { BackspaceFill } from 'react-bootstrap-icons'
 
 function Detail() {
 
@@ -115,8 +115,14 @@ function Detail() {
   return (
     <>
       <Layout>
+        <div className={styles.backButton}>
+          <Button onClick={() => navigate('/')}>
+            <BackspaceFill width={'40px'} />
+          </Button>
+        </div>
         <Row className="mt-5">
           <Col md={6}>
+
             <div className={styles.detail}>
               <FRInfoText title={t("title.companyName")} text={customerData.companyName} />
               <FRInfoText title={t("title.taxNumber")} text={customerData.taxNumber} />

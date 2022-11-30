@@ -4,5 +4,8 @@
   "english": "英语",
   "chinese": "中国人",
   "hebrew": "希伯来语",
-  "login": "登录"
+  "login": "登录",
+  "close": "关",
+  "saveChanges": "保存更改",
+  "logOut": "登出"
 }

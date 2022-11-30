@@ -6,24 +6,28 @@ import "./App.css"
 import Login from "./pages/Login"
 import Home from "./pages/Home"
 import Detail from "./pages/Detail"
+import PrivateRoutes from "./utils/privateRoute"
+
 
 
 
 function App() {
   return (
-    <div className="App">
+    <div id="app" className="App" >
       <Provider store={store}>
         <BrowserRouter>
           <Routes>
             <Route path="/login" element={<Login />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/detail/:id" element={<Detail />} />
+            <Route element={<PrivateRoutes />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/detail/:id" element={<Detail />} />
+            </Route>
           </Routes>
         </BrowserRouter>
         <ToastContainer limit={3} />
       </Provider>
-    </div>
+    </div >
   );
 }
 

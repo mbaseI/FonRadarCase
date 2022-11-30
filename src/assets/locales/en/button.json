@@ -4,5 +4,8 @@
   "english": "English",
   "chinese": "Chinese",
   "hebrew": "Hebrew",
-  "login": "Login"
+  "login": "Login",
+  "close": "Close",
+  "saveChanges": "Save Changes",
+  "logOut": "Log Out"
 }

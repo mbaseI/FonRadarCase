@@ -4,18 +4,32 @@ import { Dropdown } from "react-bootstrap"
 function LanguageSelector() {
   const { t, i18n } = useTranslation()
 
+  const rtlLanguages = [
+    "heb"
+  ]
+
+  const changeToRtl = (eventKey: string | null) => {
+    const html = document.getElementsByTagName('html')[0]
+    html.style.direction = rtlLanguages.includes(eventKey as string) ? 'rtl' : 'ltr'
+  }
+
+  const changeLanguage = (eventKey: string | null) => {
+    i18n.changeLanguage(eventKey!)
+    changeToRtl(eventKey)
+
+  }
 
   return (
     <div>
-      <Dropdown onSelect={(eventKey, e) => i18n.changeLanguage(eventKey!)}>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
+      <Dropdown onSelect={changeLanguage}>
+        <Dropdown.Toggle style={{ width: '100%' }} variant="success" id="dropdown-basic">
           {t("button.language")}
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          <Dropdown.Item className="text-end" eventKey={"tr"}>{t("button.turkish")}</Dropdown.Item>
-          <Dropdown.Item className="text-end" eventKey={"en"}>{t("button.english")}</Dropdown.Item>
-          <Dropdown.Item className="text-end" eventKey={"ch"}>{t("button.chinese")}</Dropdown.Item>
-          <Dropdown.Item className="text-end" eventKey={"heb"}>{t("button.hebrew")}</Dropdown.Item>
+          <Dropdown.Item className="text-end" eventKey={"tr"}>{"Türkçe"}</Dropdown.Item>
+          <Dropdown.Item className="text-end" eventKey={"en"}>{"English"}</Dropdown.Item>
+          <Dropdown.Item className="text-end" eventKey={"ch"}>{"自从"}</Dropdown.Item>
+          <Dropdown.Item className="text-end" eventKey={"heb"}>{"עִברִית"}</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     </div>

@@ -5,6 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from '../../config/hooks';
+import { getCustomer } from '../../pages/Detail/detailSlice';
 import styles from './style.module.scss';
 
 
@@ -25,11 +26,10 @@ function FREditModal({ show, handleClose, handleShow, editCustomer, userId, cust
         invoiceCount: customerData?.invoiceCount, contactNumber: customerData?.contactNumber
     };
     const { t } = useTranslation();
-    const navigate = useNavigate();
+
 
     const onValueSubmit = (values: any) => {
-        console.log(values, 'x')
-        dispatch(editCustomer({ userId, values })).then(() => navigate(0))
+        dispatch(editCustomer({ userId, values })).then(() => dispatch(getCustomer(userId)))
     }
 
     return (
@@ -46,7 +46,7 @@ function FREditModal({ show, handleClose, handleShow, editCustomer, userId, cust
                     isSubmitting }) => (
                     <div>
                         <Modal.Header>
-                            <Modal.Title>Müşteri Ekle</Modal.Title>
+                            <Modal.Title>{t("label.edit")}</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
                             <Form.Group controlId={"CustomerAddModal"}>
@@ -103,13 +103,13 @@ function FREditModal({ show, handleClose, handleShow, editCustomer, userId, cust
                         </Modal.Body>
                         <Modal.Footer>
                             <Button onClick={handleClose} variant="secondary" >
-                                Close
+                                {t("button.close")}
                             </Button>
                             <Button onClick={() => {
                                 handleSubmit()
                                 handleClose()
                             }} type='submit' variant="primary" >
-                                Save Changes
+                                {t("button.saveChanges")}
                             </Button>
                         </Modal.Footer>
                     </div>

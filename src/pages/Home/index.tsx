@@ -9,6 +9,7 @@ import FRModal from "../../components/FRModal";
 import { Button } from "react-bootstrap";
 import styles from './style.module.scss'
 import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 
 type InitialValues = {
   searchText: string;

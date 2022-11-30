@@ -20,7 +20,7 @@ function SearchBar({ name, value, placeholder, label, type, controlId, touched, 
         <Form.Group controlId={controlId}>
             <Form.Label className="d-flex justify-content-start h4">{label}
             </Form.Label>
-            <InputGroup>
+            <InputGroup className="mb-2">
                 <Form.Control
                     type={type}
                     name={name}

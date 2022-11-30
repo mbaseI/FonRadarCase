@@ -3,11 +3,15 @@ import styles from './style.module.scss'
 
 
 
-function Button({ onSubmit }: any) {
+function Button({ onSubmit, isDisabled, type }: any) {
     const { t } = useTranslation()
     return (
         <>
-            <button className={styles.button} onClick={onSubmit} >{t("button.login")}</button>
+            <button type={type} style={{
+                pointerEvents: isDisabled && 'none',
+                backgroundColor: isDisabled && '#434242',
+                color: isDisabled && 'white',
+            }} className={styles.button} onClick={onSubmit} >{t("button.login")}</button>
         </>
 
     );

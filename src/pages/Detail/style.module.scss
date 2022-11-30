@@ -12,12 +12,32 @@
   display: flex;
   justify-content: flex-end;
   margin-bottom: 20px;
+  @media (min-width: 340px) and (max-width: 992px) {
+    justify-content: flex-start;
+    :nth-child(2) {
+      margin: 0 10px;
+    }
+  }
+  :first-child {
+    margin: 0 10px;
+    @media (min-width: 340px) and (max-width: 992px) {
+      margin: 0;
+    }
+  }
   button {
     background-color: #bdbbbb;
     border: none;
     color: green;
   }
-  :first-child {
-    margin: 0 10px;
+}
+
+.backButton {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  button {
+    background-color: #bdbbbb;
+    border: none;
+    color: black;
   }
 }

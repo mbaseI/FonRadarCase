@@ -24,14 +24,14 @@ function CustomerList({ data }: CustomerListProps) {
         const sortedData = direction === "asc" ? [...data].sort((a: any, b: any) => a[key] > b[key] ? -1 : 1) : [...data].sort((a: any, b: any) => a[key] < b[key] ? -1 : 1)
         e.currentTarget.setAttribute("sortBy", direction === 'asc' ? 'dsc' : 'asc')
         setNData(sortedData as any)
-        console.log(e)
+
     }
 
 
 
     return (
         <>
-            <Table striped bordered hover>
+            <Table responsive striped bordered hover>
                 <thead>
                     <tr>
                         <th className={styles.columnName} onClick={(e) => onSortClick(e, "companyName")}>{(t("title.companyName"))}</th>

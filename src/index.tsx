@@ -13,11 +13,12 @@ import { ThemeProvider } from "react-bootstrap"
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+
 root.render(
   <ThemeProvider
     breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
-    minBreakpoint="xxs"
-  >
+    minBreakpoint="xxs">
     <App />
   </ThemeProvider>
 );

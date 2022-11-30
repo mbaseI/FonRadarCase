@@ -4,5 +4,8 @@
   "english": "אנגלית",
   "chinese": "סִינִית",
   "hebrew": "עִברִית",
-  "login": "התחברות"
+  "login": "התחברות",
+  "close": "סגור",
+  "saveChanges": "שמור שינויים ",
+  "logOut": "להתנתק"
 }

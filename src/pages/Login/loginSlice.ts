@@ -1,31 +1,32 @@
-import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { Users } from "../../config/models/users";
 
-export interface LoginState {
-  value: number;
+export const getUsers = createAsyncThunk("login/getUsers", async () => {
+  const response = await fetch(
+    "https://6215eeb77428a1d2a354c664.mockapi.io/api/v1/users"
+  );
+  return await response.json();
+});
+
+interface LoginReducerModel {
+  users: Users[];
 }
 
-const initialState: LoginState = {
-  value: 0,
+const initialState: LoginReducerModel = {
+  users: [],
 };
 
 export const loginSlice = createSlice({
   name: "login",
   initialState,
-  reducers: {
-    increment: (state) => {
-      state.value += 1;
-    },
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.value += action.payload;
-    },
+  reducers: {},
+  extraReducers: (login) => {
+    login.addCase(getUsers.fulfilled, (state, action) => {
+      state.users = action.payload;
+    });
   },
 });
 
-// Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = loginSlice.actions;
+export const selectLogin = (state: any) => state.login;
 
 export default loginSlice.reducer;

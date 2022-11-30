@@ -1,5 +1,6 @@
 {
   "email": "电子邮件",
+  "userName": "用户名",
   "password": "电子邮件",
   "tradeName": "商号",
   "scope": "范围",
@@ -13,5 +14,6 @@
   "cash": "现金",
   "month": "月份",
   "myCustomers": "我的客户",
-  "addNewCustomer": "添加新客户"
+  "addNewCustomer": "添加新客户",
+  "edit": "编辑"
 }

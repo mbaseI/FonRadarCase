@@ -1,5 +1,6 @@
 {
   "email": "E-posta Adresi",
+  "userName": "Kullanıcı Adınız",
   "password": "Şifreniz",
   "tradeName": "Ticari Ünvan",
   "scope": "Faaliyet Alanı",
@@ -13,5 +14,6 @@
   "cash": "Nakit",
   "month": "Ay",
   "myCustomers": "Müşterilerim",
-  "addNewCustomer": "Yeni Müşteri Ekleyin"
+  "addNewCustomer": "Yeni Müşteri Ekleyin",
+  "edit": "Düzenle"
 }

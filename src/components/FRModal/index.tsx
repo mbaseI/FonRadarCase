@@ -41,7 +41,7 @@ function FRModal({ show, handleClose, handleShow, addCustomer }: any) {
                     isSubmitting }) => (
                     <div>
                         <Modal.Header>
-                            <Modal.Title>Müşteri Ekle</Modal.Title>
+                            <Modal.Title>{t("label.addNewCustomer")}</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
                             <Form.Group controlId={"CustomerAddModal"}>
@@ -98,13 +98,13 @@ function FRModal({ show, handleClose, handleShow, addCustomer }: any) {
                         </Modal.Body>
                         <Modal.Footer>
                             <Button onClick={handleClose} variant="secondary" >
-                                Close
+                                {t("button.close")}
                             </Button>
                             <Button onClick={() => {
                                 handleSubmit()
                                 handleClose()
                             }} type='submit' variant="primary" >
-                                Save Changes
+                                {t("button.saveChanges")}
                             </Button>
                         </Modal.Footer>
                     </div>
