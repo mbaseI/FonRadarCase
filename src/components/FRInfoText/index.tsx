@@ -2,7 +2,7 @@ import styles from './style.module.scss'
 
 type DetailBoxProps = {
     title: string;
-    text: string;
+    text: string | number;
 }
 
 function FRInfoText({ title, text }: DetailBoxProps) {

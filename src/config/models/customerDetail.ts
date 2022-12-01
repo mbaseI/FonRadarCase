@@ -4,5 +4,5 @@ export type customerDetail = {
   taxOffice: string;
   invoiceCount: number;
   contactNumber: string;
-  id: any;
+  id?: string;
 };

@@ -1,3 +1,4 @@
 {
-  "emailRequired": "Email Required"
+  "emailRequired": "Email Required",
+  "incorrentLogin": "Your email or password is incorrect"
 }

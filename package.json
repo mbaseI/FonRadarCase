@@ -12,6 +12,7 @@
     "@types/react-dom": "^18.0.9",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.3",
+    "cypress": "^11.2.0",
     "formik": "^2.2.9",
     "i18next": "^21.8.16",
     "immer": "^9.0.15",

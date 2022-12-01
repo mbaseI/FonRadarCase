@@ -3,4 +3,10 @@
   height: 340px;
   padding: 20px;
   border-radius: 10px;
+  .errorMessage {
+    display: inline-flex;
+    margin-top: 5px;
+    cursor: pointer;
+    color: rgb(134, 72, 72);
+  }
 }

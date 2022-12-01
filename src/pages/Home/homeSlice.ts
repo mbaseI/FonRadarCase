@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { Customer } from "../../config/models/customer";
+import { RootState } from "../../store";
 
 export const fetchData = createAsyncThunk("home/fetchData", async () => {
   const response = await fetch(
@@ -10,7 +11,7 @@ export const fetchData = createAsyncThunk("home/fetchData", async () => {
 
 export const addCustomer = createAsyncThunk(
   "home/addCustomer",
-  async (values: any) => {
+  async (values: Customer) => {
     const response = await fetch(
       "https://6215eeb77428a1d2a354c664.mockapi.io/api/v1/customers",
       {
@@ -44,6 +45,6 @@ export const homeSlice = createSlice({
   },
 });
 
-export const selectHome = (state: any) => state.home;
+export const selectHome = (state: RootState) => state.home;
 
 export default homeSlice.reducer;

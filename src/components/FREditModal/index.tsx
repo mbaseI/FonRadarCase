@@ -1,24 +1,26 @@
+import { AnyAsyncThunk } from '@reduxjs/toolkit/dist/matchers';
 import { Formik } from 'formik';
 import { InputGroup, Form } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from '../../config/hooks';
+import { customerDetail } from '../../config/models/customerDetail';
+import { ModalProps } from '../../config/models/modalProps';
 import { getCustomer } from '../../pages/Detail/detailSlice';
 import styles from './style.module.scss';
 
 
-type InitialValues = {
-    companyName: string;
-    taxNumber: number | undefined;
-    taxOffice: string;
-    invoiceCount: number | undefined;
-    contactNumber: string;
-}
+type InitialValues = customerDetail
+
+type FREditModalProps = {
+    editCustomer: ({ userId, values }: { userId: string, values: customerDetail }) => any;
+    userId: string;
+    customerData: customerDetail;
+} & ModalProps
 
 
-function FREditModal({ show, handleClose, handleShow, editCustomer, userId, customerData }: any) {
+function FREditModal({ show, handleClose, editCustomer, userId, customerData }: FREditModalProps) {
 
     const dispatch = useAppDispatch();
     const initialValues: InitialValues = {
@@ -28,7 +30,7 @@ function FREditModal({ show, handleClose, handleShow, editCustomer, userId, cust
     const { t } = useTranslation();
 
 
-    const onValueSubmit = (values: any) => {
+    const onValueSubmit = (values: customerDetail) => {
         dispatch(editCustomer({ userId, values })).then(() => dispatch(getCustomer(userId)))
     }
 

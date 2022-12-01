@@ -4,26 +4,22 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from '../../config/hooks';
-import { fetchData } from '../../pages/Home/homeSlice';
+import { Customer } from '../../config/models/customer';
+import { ModalProps } from '../../config/models/modalProps';
+import { addCustomer, fetchData } from '../../pages/Home/homeSlice';
 import styles from './style.module.scss';
 
 
-type InitialValues = {
-    companyName: string;
-    taxNumber: number | undefined;
-    taxOffice: string;
-    invoiceCount: number | undefined;
-    contactNumber: string;
-}
+type InitialValues = Customer
 
 
-function FRModal({ show, handleClose, handleShow, addCustomer }: any) {
+function FRModal({ show, handleClose, handleShow }: ModalProps) {
 
     const dispatch = useAppDispatch();
-    const initialValues: InitialValues = { companyName: "", taxNumber: undefined, taxOffice: "", invoiceCount: undefined, contactNumber: "" };
+    const initialValues: InitialValues = { companyName: "", taxNumber: "", taxOffice: "", invoiceCount: "", contactNumber: "" };
     const { t } = useTranslation();
 
-    const onValueSubmit = (values: any) => {
+    const onValueSubmit = (values: InitialValues) => {
         dispatch(addCustomer(values)).then(() => dispatch(fetchData()))
     }
 
@@ -50,6 +46,7 @@ function FRModal({ show, handleClose, handleShow, addCustomer }: any) {
                                         <Form.Control
                                             type={"string"}
                                             name={"companyName"}
+                                            id={'companyName'}
                                             placeholder={t("title.companyName")}
                                             onChange={handleChange}
                                             onBlur={handleBlur}
@@ -59,6 +56,7 @@ function FRModal({ show, handleClose, handleShow, addCustomer }: any) {
                                         <Form.Control
                                             type={"string"}
                                             name={"taxNumber"}
+                                            id={'taxNumber'}
                                             placeholder={t("title.taxNumber")}
                                             onChange={handleChange}
                                             onBlur={handleBlur}
@@ -68,6 +66,7 @@ function FRModal({ show, handleClose, handleShow, addCustomer }: any) {
                                         <Form.Control
                                             type={"string"}
                                             name={"taxOffice"}
+                                            id={'taxOffice'}
                                             placeholder={t("title.taxOffice")}
                                             onChange={handleChange}
                                             onBlur={handleBlur}
@@ -77,6 +76,7 @@ function FRModal({ show, handleClose, handleShow, addCustomer }: any) {
                                         <Form.Control
                                             type={"string"}
                                             name={"contactNumber"}
+                                            id={'contactNumber'}
                                             placeholder={t("title.contactNumber")}
                                             onChange={handleChange}
                                             onBlur={handleBlur}
@@ -86,6 +86,7 @@ function FRModal({ show, handleClose, handleShow, addCustomer }: any) {
                                         <Form.Control
                                             type={"string"}
                                             name={"invoiceCount"}
+                                            id={'invoiceCount'}
                                             placeholder={t("title.invoiceCount")}
                                             onChange={handleChange}
                                             onBlur={handleBlur}
@@ -100,7 +101,7 @@ function FRModal({ show, handleClose, handleShow, addCustomer }: any) {
                             <Button onClick={handleClose} variant="secondary" >
                                 {t("button.close")}
                             </Button>
-                            <Button onClick={() => {
+                            <Button id="saveChanges" onClick={() => {
                                 handleSubmit()
                                 handleClose()
                             }} type='submit' variant="primary" >

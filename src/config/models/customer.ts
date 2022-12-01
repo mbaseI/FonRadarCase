@@ -2,7 +2,7 @@ export type Customer = {
   companyName: string;
   taxNumber: string;
   taxOffice: string;
-  invoiceCount: number;
+  invoiceCount: number | string;
   contactNumber: string;
-  id: any;
+  id?: string;
 };

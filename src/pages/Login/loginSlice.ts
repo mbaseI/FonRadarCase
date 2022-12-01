@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { Users } from "../../config/models/users";
+import { User } from "../../config/models/user";
+import { RootState } from "../../store";
 
 export const getUsers = createAsyncThunk("login/getUsers", async () => {
   const response = await fetch(
@@ -9,7 +10,7 @@ export const getUsers = createAsyncThunk("login/getUsers", async () => {
 });
 
 interface LoginReducerModel {
-  users: Users[];
+  users: User[];
 }
 
 const initialState: LoginReducerModel = {
@@ -27,6 +28,6 @@ export const loginSlice = createSlice({
   },
 });
 
-export const selectLogin = (state: any) => state.login;
+export const selectLogin = (state: RootState) => state.login;
 
 export default loginSlice.reducer;

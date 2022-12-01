@@ -29,7 +29,7 @@ function Detail() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const onDelete = (id: any) => {
+  const onDelete = (id: string) => {
     dispatch(deleteCustomer(id)).then(() => navigate('/'))
   }
 

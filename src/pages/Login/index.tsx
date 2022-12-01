@@ -1,5 +1,5 @@
 import { Form, Formik } from "formik"
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom";
@@ -8,6 +8,7 @@ import FRInput from "../../components/FRInput";
 import FRPasswordInput from "../../components/FRPasswordInput";
 import Layout from "../../components/Layout";
 import { useAppDispatch, useAppSelector } from "../../config/hooks";
+import { User } from "../../config/models/user";
 import SignInSchema from "../../config/Validations/SignIn";
 import { getUsers, selectLogin } from "./loginSlice";
 import styles from './style.module.scss';
@@ -20,18 +21,20 @@ type LoginForm = {
 
 function Login() {
   const { t } = useTranslation()
+  const [isCorrect, setIsCorrect] = useState<any | null>(null);
   const dispatch = useAppDispatch();
   const usersState = useAppSelector(selectLogin);
   const navigate = useNavigate()
   const login = (values: LoginForm) => {
-    const isValid = usersState.users.some((user: any) => values.username === user.username && values.password === user.password)
-    if (!isValid) return
+    const isValid = usersState.users.some((user: User) => values.username === user.username && values.password === user.password)
+    if (!isValid) setIsCorrect(false)
     // eslint-disable-next-line no-restricted-globals
-    const UUID = self.crypto.randomUUID()
-    localStorage.setItem("token", UUID)
-    navigate('/')
+    else {
+      const UUID = self.crypto.randomUUID()
+      localStorage.setItem("token", UUID)
+      navigate('/')
+    }
   }
-
 
   useEffect(() => {
     dispatch(getUsers())
@@ -44,7 +47,7 @@ function Login() {
         <Row className="justify-content-md-center mt-5">
           <Col md={4}>
             <Formik
-              initialValues={{ username: "Alfredo_Rau46", password: "xdNxGq9bY6WAYMl" }}
+              initialValues={{ username: "", password: "" }}
               onSubmit={login}
               validationSchema={SignInSchema}
             >
@@ -81,13 +84,16 @@ function Login() {
                       touched={touched.password}
                       errors={errors.password}
                     />
-                    <Button type='submit' isDisabled={!isValid} />
+                    <Button id="loginButton" type='submit' isDisabled={!isValid} />
+                    {isCorrect === false && <div onClick={() => setIsCorrect(null)} className={styles.errorMessage}>{t("validation.incorrentLogin")}</div>}
                   </div>
                 </Form>
               )}
             </Formik>
+
           </Col>
         </Row>
+
       </Layout>
 
     </>

@@ -1,3 +1,4 @@
 {
-  "emailRequired": "Email adresi giriniz!"
+  "emailRequired": "Email adresi giriniz!",
+  "incorrentLogin": "Email veya şifreniz hatalı"
 }

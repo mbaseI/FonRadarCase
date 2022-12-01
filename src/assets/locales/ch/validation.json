@@ -1,3 +1,4 @@
 {
-  "emailRequired": "需要电子邮件"
+  "emailRequired": "需要电子邮件",
+  "incorrentLogin": "您的电子邮件或密码不正确"
 }

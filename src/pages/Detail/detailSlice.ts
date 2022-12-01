@@ -1,17 +1,25 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { customerDetail } from "../../config/models/customerDetail";
+import { RootState } from "../../store";
 
 interface DetailReducerModel {
-  customerDetail: customerDetail[];
+  customerDetail: customerDetail;
 }
 
 const initialState: DetailReducerModel = {
-  customerDetail: [],
+  customerDetail: {
+    companyName: "",
+    contactNumber: "",
+    id: "",
+    invoiceCount: 0,
+    taxNumber: "",
+    taxOffice: "",
+  },
 };
 
 export const getCustomer = createAsyncThunk(
   "detail/getCustomer",
-  async (userId: any) => {
+  async (userId: string) => {
     const response = await fetch(
       `https://6215eeb77428a1d2a354c664.mockapi.io/api/v1/customers/${userId}`
     );
@@ -21,7 +29,7 @@ export const getCustomer = createAsyncThunk(
 
 export const deleteCustomer = createAsyncThunk(
   "detail/deleteCustomer",
-  async (userId: any) => {
+  async (userId: string) => {
     const response = await fetch(
       `https://6215eeb77428a1d2a354c664.mockapi.io/api/v1/customers/${userId}`,
       {
@@ -35,8 +43,7 @@ export const deleteCustomer = createAsyncThunk(
 
 export const editCustomer = createAsyncThunk(
   "detail/editCustomer",
-  async ({ userId, values }: any) => {
-    console.log(userId, values);
+  async ({ userId, values }: { userId: string; values: customerDetail }) => {
     const response = await fetch(
       `https://6215eeb77428a1d2a354c664.mockapi.io/api/v1/customers/${userId}`,
       {
@@ -47,7 +54,6 @@ export const editCustomer = createAsyncThunk(
         body: JSON.stringify(values),
       }
     );
-
     return await response.json();
   }
 );
@@ -63,6 +69,6 @@ export const detailSlice = createSlice({
   },
 });
 
-export const selectDetail = (state: any) => state.detail;
+export const selectDetail = (state: RootState) => state.detail;
 
 export default detailSlice.reducer;

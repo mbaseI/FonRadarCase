@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-function ResultCard({ companyName, taxNumber, taxOffice, contactNumber, id }: Customer) {
+function ResultCard({ companyName, taxNumber, taxOffice, contactNumber, invoiceCount, id }: Customer) {
     const navigate = useNavigate();
     return (
         <>
@@ -11,6 +11,7 @@ function ResultCard({ companyName, taxNumber, taxOffice, contactNumber, id }: Cu
                 <td>{companyName}</td>
                 <td>{taxNumber}</td>
                 <td>{taxOffice}</td>
+                <td>{invoiceCount}</td>
                 <td>{contactNumber}</td>
             </tr>
         </>
