@@ -10,6 +10,10 @@ For Cypress Test
 
 ### `npx cpyress open`
 
+User Information
+
+### Username : Kole.White25 - Passowrd : eJDFhFLUt0poysB
+
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
