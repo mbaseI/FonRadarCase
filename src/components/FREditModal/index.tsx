@@ -1,4 +1,3 @@
-import { AnyAsyncThunk } from '@reduxjs/toolkit/dist/matchers';
 import { Formik } from 'formik';
 import { InputGroup, Form } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
@@ -39,13 +38,10 @@ function FREditModal({ show, handleClose, editCustomer, userId, customerData }: 
             <Formik initialValues={initialValues}
                 onSubmit={onValueSubmit}>
                 {({ values,
-                    errors,
-                    touched,
                     handleBlur,
                     handleChange,
                     handleSubmit,
-                    setFieldValue,
-                    isSubmitting }) => (
+                }) => (
                     <div>
                         <Modal.Header>
                             <Modal.Title>{t("label.edit")}</Modal.Title>

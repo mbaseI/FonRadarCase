@@ -28,7 +28,6 @@
     "react-toastify": "^9.0.7",
     "reselect": "^4.1.6",
     "sass-loader": "^13.2.0",
-    "typescript": "^4.9.3",
     "web-vitals": "^2.1.4",
     "yup": "^0.32.11"
   },
@@ -55,5 +54,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.28.0",
+    "typescript": "^4.9.3"
   }
 }

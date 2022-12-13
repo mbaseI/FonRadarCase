@@ -24,8 +24,8 @@ describe("fonRadarTest", () => {
   });
 
   it("trueLogin", () => {
-    cy.get("#formEmail").type("Kaitlin30");
-    cy.get("#password").type("QxBFUeUtIrgG4v8");
+    cy.get("#formEmail").type("Kole.White25");
+    cy.get("#password").type("eJDFhFLUt0poysB");
     cy.get("#loginButton").click();
     cy.get("#addNewCustomer").click();
     cy.get("#companyName").type("Cypress Test Company");

@@ -21,14 +21,10 @@ function CustomerList({ data }: CustomerListProps) {
 
     const onSortClick = (e: MouseEvent<HTMLElement>, key: string) => {
         const direction = e.currentTarget.getAttribute('sortBy') || "asc"
-
         const sortedData = direction === "asc" ? [...data].sort((a: any, b: any) => a[key as keyof any] > b[key as keyof any] ? -1 : 1) :
             [...data].sort((a: any, b: any) => a[key as any] < b[key as any] ? -1 : 1)
         e.currentTarget.setAttribute("sortBy", direction === 'asc' ? 'dsc' : 'asc')
         setNData(sortedData as Customer[])
-
-
-
     }
 
 

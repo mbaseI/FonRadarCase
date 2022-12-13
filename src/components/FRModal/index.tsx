@@ -13,7 +13,7 @@ import styles from './style.module.scss';
 type InitialValues = Customer
 
 
-function FRModal({ show, handleClose, handleShow }: ModalProps) {
+function FRModal({ show, handleClose }: ModalProps) {
 
     const dispatch = useAppDispatch();
     const initialValues: InitialValues = { companyName: "", taxNumber: "", taxOffice: "", invoiceCount: "", contactNumber: "" };
@@ -28,13 +28,10 @@ function FRModal({ show, handleClose, handleShow }: ModalProps) {
             <Formik initialValues={initialValues}
                 onSubmit={onValueSubmit}>
                 {({ values,
-                    errors,
-                    touched,
                     handleBlur,
                     handleChange,
                     handleSubmit,
-                    setFieldValue,
-                    isSubmitting }) => (
+                }) => (
                     <div>
                         <Modal.Header>
                             <Modal.Title>{t("label.addNewCustomer")}</Modal.Title>

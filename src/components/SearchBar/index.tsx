@@ -1,4 +1,4 @@
-import { FormikErrors, FormikHelpers, FormikProps, FormikState, FormikTouched, FormikValues } from 'formik';
+import { FormikTouched } from 'formik';
 import { Form, InputGroup } from 'react-bootstrap';
 import { Search } from 'react-bootstrap-icons'
 
@@ -15,7 +15,7 @@ type SearchBarProps = {
 }
 
 
-function SearchBar({ name, value, placeholder, label, type, controlId, touched, handleChange, handleBlur }: any) {
+function SearchBar({ name, value, placeholder, label, type, controlId, handleChange, handleBlur }: any) {
     return (
         <Form.Group controlId={controlId}>
             <Form.Label className="d-flex justify-content-start h4">{label}

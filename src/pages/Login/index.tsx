@@ -57,8 +57,7 @@ function Login() {
                 isValid,
                 handleChange,
                 handleBlur,
-                handleSubmit,
-                isSubmitting }) => (
+              }) => (
                 <Form>
                   <div className={styles.login}>
                     <FRInput
